@@ -8,7 +8,7 @@
 
 ## 安装
 
-    yarn add 
+    yarn add https://github.com/hamono/video-player.git
 
 ## 使用说明
 
