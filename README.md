@@ -22,6 +22,7 @@
 
 |API|可选性|含义|类型|
 |:-:|:-:|:-:|:-:|
+|src|必选|文件URL|String|
 |size|必选|大小，表示宽度，只支持16:9，高度自动计算|Number|
 |pre|可选|同video标签的preload，默认为metadata|String|
 |controls|可选|同video标签的controls，默认为true，即显示控件|Boolean|

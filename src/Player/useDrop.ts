@@ -4,9 +4,10 @@ import SupportContext from "./supportContext";
 
 // let play='http://www.hamomo.top/videos/小女孩.mp4';
 export default function useDrop(
-  Ref: React.MutableRefObject<any>
+  Ref: React.MutableRefObject<any>,
+  src:string
 ): [string, (e: React.DragEvent<HTMLVideoElement>) => void,boolean] {
-  const [play,setPlay]=React.useState('')
+  const [play,setPlay]=React.useState(src)
   const {notSupport,setNotSupport}=React.useContext(SupportContext)
   const handleDrop = React.useCallback(
     (e: React.DragEvent<HTMLVideoElement>) => {
