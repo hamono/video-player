@@ -3,11 +3,11 @@ import SupportContext from "./supportContext";
 import React from "react";
 
 export default function Warning() {
-  const { setsupport } = React.useContext(SupportContext);
+  const { setSupport } = React.useContext(SupportContext);
   Modal.warning({
     title: '格式不支持',
     content: '请放入视频文件,目前只支持MP4，OGG，WEBM格式的视频文件',
-    onOk() { setsupport(true) }
+    onOk() { setSupport(true) }
   });
 }
 
