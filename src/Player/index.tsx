@@ -7,7 +7,7 @@ import Size from "./sizeStyle";
 export default function Player({ src, size, children, pre, post, className ,controls}:
   React.PropsWithChildren<{src:string, size: number, pre?: string, post?: string, className?: string,controls?:boolean }>) {
   const video = React.useRef(null);
-  const [play, handleDrop, notSupport] = useDrop(video,src)
+  const [play, handleDrop, support] = useDrop(video,src)
   React.useEffect(() => {
     document.addEventListener('dragover', preventDefaultAction, false)
     document.addEventListener('dragenter', preventDefaultAction, false)
@@ -15,7 +15,6 @@ export default function Player({ src, size, children, pre, post, className ,cont
 
   return <video
     className={className}
-    src={play}
     ref={video}
     controls={controls?controls:true}
     preload={pre ? pre : 'metadata'}
@@ -23,8 +22,8 @@ export default function Player({ src, size, children, pre, post, className ,cont
     onError={Error}
     poster={post ? post === 'default' ? 'http://www.hamomo.top/images/defaultPoster.jpg' : post:''}
     style={Size(size)} >
-    {!notSupport && Warning}
-    <source src={src} type="file/mp4" />
+    {!support && Warning}
+    <source src={play} type="file/mp4" />
     {children}
   </video >
 }
