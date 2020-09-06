@@ -4,7 +4,11 @@
 
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/hamono/video-player)
 
-简单的视频播放器，支持拖入播放本地视频
+简单的视频播放器，
+
+支持拖入播放本地视频；
+
+判断视频格式合理显示错误信息，优化用户体验；
 
 ## 安装
 
